@@ -1,53 +1,43 @@
-# VT-MEMS-Data-Analysis-Tool
-This project is a Python-based data analysis tool developed for the Virginia Tech MEMS Lab to automate the processing of experimental data from cyclone penetration efficiency (PE) experiments. It streamlines the workflow by replacing manual data handling with a structured and reproducible pipeline that integrates with Excel datasets.
+# VT-MEMS Data Analysis Tool
 
-Purpose
-The goal of this tool is to:
+A Python-based tool developed for the Virginia Tech MEMS Lab to automate data analysis for cyclone penetration efficiency (PE) experiments. This project streamlines workflows by replacing manual Excel processing with a structured, script-driven pipeline.
 
-Automate data extraction, averaging, and interpolation from GRIMM and SEMS instrument outputs.
+---
 
-Calculate penetration efficiency using upstream and downstream particle concentration data.
+## Purpose
 
-Visualize PE across particle size bins using semilog plots.
+- Automate data extraction and averaging from GRIMM and SEMS instruments  
+- Compute Penetration Efficiency (PE) using upstream/downstream concentration data  
+- Visualize results with a semilog plot of particle diameter vs. PE  
+- (In Progress) Build a user-friendly GUI to simplify usage for researchers  
 
-(In Progress) Build a GUI interface for easier data input and user interaction.
+---
 
-Features
-Support for GRIMM (0.25–35 µm) and SEMS (0.03–0.75 µm) instrument formats.
+## Features
 
-Clean integration with Excel files for seamless analysis.
+- Supports GRIMM (0.25–35 µm) and SEMS (0.03–0.75 µm) Excel datasets  
+- Configurable time windows for upstream and downstream intervals  
+- Dynamic correction factor input for calibration  
+- Interpolates size bins and aligns data between instruments  
+- Outputs clean PE tables and semilog graphs  
+- Modular design using reader and analyzer classes  
 
-Configurable time windows for upstream/downstream data.
+---
 
-Dynamic correction factor input.
+## How It Works
 
-Clear PE output tables and semilog graph generation.
+1. Load Excel data files from GRIMM and SEMS instruments  
+2. Define upstream and downstream measurement periods  
+3. Input correction factors (e.g., `1375/800`)  
+4. Tool calculates and displays PE  
+5. Semilog plot is generated for visualization  
 
-Modular design using Reader and Efficiency classes for reusability.
+---
 
-How It Works
-Load Excel files from SEMS and GRIMM.
+## Dependencies
 
-Select time windows for upstream and downstream measurements.
-
-Enter correction factors as needed.
-
-Automatically compute penetration efficiency.
-
-Display results and plot PE vs. particle diameter.
-
-Requirements
-Python
-
-pandas
-
-matplotlib
-
-openpyxl
-
-Future Plans
-Implement a GUI interface for non-programmer usability.
-
-Support multiple file formats and batch processing.
-
-Add export options for processed data and plots.
+Install the required Python packages:
+- Python
+- pandas
+- matplotlib
+- openpyxl
